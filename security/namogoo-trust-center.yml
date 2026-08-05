@@ -1,0 +1,38 @@
+generated: '2026-08-04'
+method: searched
+probe: true
+source: https://wandz.ai/security/
+url: https://wandz.ai/security/
+page_type: security-policy-page
+note: >-
+  This is a security-policy page, not a dedicated trust center — there is no trust.wandz.ai or
+  trust.namogoo.com. IMPORTANT ATTRIBUTION CORRECTION: the automated probe extracted "ISO
+  27001" and "PCI DSS" from this page, but on the page those certifications belong to
+  Snowflake, the sub-processor hosting the data platform, NOT to Namogoo/Wandz.ai. They are
+  recorded below as sub-processor certifications and are deliberately NOT listed as the
+  company's own.
+certifications: []
+self_asserted_compliance:
+- GDPR
+- CCPA
+subprocessor_certifications:
+- subprocessor: Snowflake
+  certifications: [ISO 27001, PCI DSS]
+  note: Page links out to Snowflake's own security center for detail.
+covered_topics:
+- physical access control
+- system access control
+- data encryption
+- backup procedures
+- employee confidentiality agreements
+- third-party contractor vetting
+- responsible disclosure
+evidence:
+- source: https://wandz.ai/security/
+  http_status: 200
+  fetched: '2026-08-04'
+  keywords:
+  - iso 27001
+  - gdpr
+  - ccpa
+  - pci dss

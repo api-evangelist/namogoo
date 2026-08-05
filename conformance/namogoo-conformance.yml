@@ -1,0 +1,59 @@
+generated: '2026-08-04'
+method: searched
+source: https://wandz.ai/security/
+docs: https://wandz.ai/privacy-policy/
+note: >-
+  No machine-readable contract exists for Namogoo / Wandz.ai, so no standard can be derived
+  from a specification. Everything below is read from the company's own published security and
+  privacy pages, or recorded as absent.
+standards:
+- id: gdpr
+  conforms: true
+  evidence: >-
+    wandz.ai/security/ describes the information-security measures the company applies to meet
+    GDPR obligations; the Android SDK README states built-in support for GDPR compliance.
+- id: ccpa
+  conforms: true
+  evidence: >-
+    wandz.ai/security/ cites CCPA as an applicable framework; the Android SDK README states
+    built-in support for CCPA compliance.
+- id: iso-27001
+  conforms: false
+  evidence: >-
+    ISO 27001 is named on wandz.ai/security/ only in reference to Snowflake, the sub-processor
+    hosting the data platform — it is NOT claimed as a Namogoo/Wandz certification.
+- id: pci-dss
+  conforms: false
+  evidence: >-
+    PCI DSS is named on wandz.ai/security/ only in reference to Snowflake's infrastructure, not
+    as a Namogoo/Wandz certification.
+- id: soc2
+  conforms: false
+  evidence: No SOC 2 report or certification is claimed on any public page.
+- id: oauth2
+  conforms: false
+  evidence: No public OAuth 2.0 surface; SDK activation uses a vendor-issued Account ID.
+- id: openid-connect
+  conforms: false
+  evidence: No /.well-known/openid-configuration on any resolvable host.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No public API contract to assert an error format against.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: 'https://wandz.ai/.well-known/security.txt returned 404 on 2026-08-04.'
+- id: openapi
+  conforms: false
+  evidence: >-
+    No OpenAPI/Swagger document found on any Namogoo or Wandz host after probing
+    /openapi.json, /openapi.yaml, /swagger.json, /api-docs and /docs.
+- id: a2a
+  conforms: false
+  evidence: >-
+    '/.well-known/agent-card.json and /.well-known/agent.json returned 404 on wandz.ai;
+    the 200s observed on namogoo.com and app.wandz.ai are redirect/SPA HTML, not agent cards.'
+subprocessors:
+- name: Snowflake
+  role: data platform / storage
+  certifications_claimed_by_subprocessor: [ISO 27001, PCI DSS]
+  note: Named on wandz.ai/security/ with a link to Snowflake's own security center.

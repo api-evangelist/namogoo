@@ -1,0 +1,133 @@
+generated: '2026-08-04'
+method: searched
+source: >-
+  Maven Central, CocoaPods trunk, Packagist, npm registry, and the github.com/namogoo
+  organization (probed 2026-08-04)
+notes: >-
+  Namogoo publishes no server-side REST client libraries because it publishes no public REST
+  API. The first-party distribution surface is mobile SDKs and an e-commerce platform module.
+  Packages under the Wandz.ai brand are the same first-party publisher — the npm account
+  `wandz.ai` registers with an @namogoo.com address, and the Wandz SDKs are hosted in the
+  github.com/namogoo organization.
+packages:
+- language: kotlin
+  registry: maven-central
+  name: ai.wandz.android:core-wandz
+  version: 1.0.49
+  url: https://repo1.maven.org/maven2/ai/wandz/android/core-wandz/
+  install: implementation 'ai.wandz.android:core-wandz:1.0.49'
+  repository: https://github.com/namogoo/wandz-android-sdk
+  official: true
+  kind: mobile-sdk
+  x-evidence:
+    url: https://repo1.maven.org/maven2/ai/wandz/android/core-wandz/maven-metadata.xml
+    http_status: 200
+    fetched: '2026-08-04'
+- language: swift
+  registry: swift-package-manager
+  name: WandzSDK
+  url: https://github.com/namogoo/wandz-ios-sdk
+  install: '.package(url: "https://github.com/namogoo/wandz-ios-sdk", branch: "main")'
+  repository: https://github.com/namogoo/wandz-ios-sdk
+  official: true
+  kind: mobile-sdk
+  note: >-
+    Binary xcframework target declared in Package.swift (swift-tools-version 5.9, iOS 15+).
+    No semver git tags are published — consumers pin a branch or commit.
+  x-evidence:
+    url: https://raw.githubusercontent.com/namogoo/wandz-ios-sdk/main/Package.swift
+    http_status: 200
+    fetched: '2026-08-04'
+- language: swift
+  registry: cocoapods
+  name: NamogooIBPSDK
+  url: https://cocoapods.org/pods/NamogooIBPSDK
+  install: pod 'NamogooIBPSDK'
+  repository: https://github.com/namogoo/namogoo-ibp-ios-sdk
+  official: true
+  kind: mobile-sdk
+  license: MIT
+  note: Intent-Based Promotions iOS SDK; author "Namogoo Platform, mobile.dev@namogoo.com".
+  x-evidence:
+    url: https://trunk.cocoapods.org/api/v1/pods/NamogooIBPSDK
+    http_status: 200
+    fetched: '2026-08-04'
+- language: php
+  registry: packagist
+  name: namogoo/module-intentbasedpromotion
+  url: https://packagist.org/packages/namogoo/module-intentbasedpromotion
+  install: composer require namogoo/module-intentbasedpromotion
+  repository: https://bitbucket.org/namogooteam/nmg-pi-magento.git
+  official: true
+  kind: platform-module
+  package_type: magento2-module
+  note: Only dev-master / dev-develop branch versions published; no tagged release.
+  x-evidence:
+    url: https://packagist.org/packages/namogoo/module-intentbasedpromotion.json
+    http_status: 200
+    fetched: '2026-08-04'
+- language: php
+  registry: packagist
+  name: namogoo/module-predictiveincentive
+  url: https://packagist.org/packages/namogoo/module-predictiveincentive
+  install: composer require namogoo/module-predictiveincentive
+  repository: https://bitbucket.org/namogooteam/nmg-pi-magento.git
+  official: true
+  kind: platform-module
+  package_type: magento2-module
+  note: Only dev-master / dev-develop branch versions published; no tagged release.
+  x-evidence:
+    url: https://packagist.org/packages/namogoo/module-predictiveincentive.json
+    http_status: 200
+    fetched: '2026-08-04'
+- language: javascript
+  registry: npm
+  name: eslint-config-wandz
+  version: 1.0.0-working-10
+  url: https://www.npmjs.com/package/eslint-config-wandz
+  install: npm install eslint-config-wandz
+  official: true
+  kind: internal-tooling
+  note: >-
+    Shared ESLint config published by the `wandz.ai` npm account (ohad@namogoo.com). Internal
+    engineering tooling, not an API client library.
+  x-evidence:
+    url: https://registry.npmjs.org/eslint-config-wandz
+    http_status: 200
+    fetched: '2026-08-04'
+repositories:
+- name: wandz-android-sdk
+  url: https://github.com/namogoo/wandz-android-sdk
+  language: Kotlin
+  last_push: '2025-12-29'
+- name: wandz-ios-sdk
+  url: https://github.com/namogoo/wandz-ios-sdk
+  language: Swift
+  last_push: '2026-02-03'
+- name: wizcart-mobile-sdk
+  url: https://github.com/namogoo/wizcart-mobile-sdk
+  language: Swift
+  last_push: '2024-09-19'
+  note: Android + iOS folders; README is a one-line stub.
+- name: namogoo-ibp-ios-sdk
+  url: https://github.com/namogoo/namogoo-ibp-ios-sdk
+  language: Objective-C
+  last_push: '2024-09-19'
+- name: namogoo-ibp-android-sdk
+  url: https://github.com/namogoo/namogoo-ibp-android-sdk
+  last_push: '2024-09-19'
+  note: README only — no published artifact found in Maven Central under a namogoo group id.
+- name: magento2-namogoo-module
+  url: https://github.com/namogoo/magento2-namogoo-module
+  last_push: '2024-09-19'
+  note: Empty except .github; the shipped module lives on Packagist from a Bitbucket source.
+registries_probed:
+- {registry: maven-central, result: hit}
+- {registry: cocoapods, result: hit}
+- {registry: packagist, result: hit}
+- {registry: npm, result: hit-tooling-only}
+- {registry: pypi, result: miss, status: 404}
+- {registry: rubygems, result: not-applicable}
+- {registry: nuget, result: not-applicable}
+- {registry: crates.io, result: not-applicable}
+- {registry: pkg.go.dev, result: not-applicable}

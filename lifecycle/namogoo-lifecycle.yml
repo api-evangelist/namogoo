@@ -1,0 +1,50 @@
+generated: '2026-08-04'
+method: searched
+source: https://www.abtasty.com/blog/wandzai-acquisition/
+note: >-
+  Namogoo has no public API to version, so this artifact records the SDK release lifecycle and
+  the corporate/brand lifecycle that determines where the surface now lives.
+versioning:
+  scheme: semver
+  applies_to: mobile SDK artifacts (no public API to version)
+  current:
+    android: 1.0.49
+    ios: 1.0.5
+  docs: https://github.com/namogoo/wandz-android-sdk
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No published deprecation or sunset policy for the SDKs or the JavaScript tag.
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+support:
+  contact: https://wandz.ai/contact-us/
+  email: support@wandz.ai
+brand_lifecycle:
+- date: '2014'
+  event: Namogoo Technologies Ltd. founded in Herzliya, Israel.
+  evidence: https://en.wikipedia.org/wiki/Namogoo
+- date: '2024'
+  event: >-
+    Product and site rebranded from Namogoo (Digital Journey Continuity) to Wandz.ai
+    (real-time predictive AI); SDK group id moves to ai.wandz.android.
+  evidence: https://github.com/namogoo/wandz-android-sdk
+- date: '2025-11'
+  event: >-
+    Wandz.ai acquired by AB Tasty; the technology is folded into AB Tasty AdaptiveCX.
+  evidence: https://www.abtasty.com/blog/wandzai-acquisition/
+- date: '2026-08-04'
+  event: >-
+    namogoo.com and www.namogoo.com 301 to wandz.ai; the wandz.ai root 301s to
+    https://www.abtasty.com/adaptivecx/. Deep wandz.ai pages (security, privacy, terms,
+    contact) and app.wandz.ai remain live, and both mobile SDK repositories are still
+    receiving commits (iOS last pushed 2026-02-03).
+  evidence: https://wandz.ai/security/
+successor:
+  company: AB Tasty
+  product: AdaptiveCX
+  url: https://www.abtasty.com/adaptivecx/
+  documentation: https://docs.abtasty.com/
+deprecated_operations: []

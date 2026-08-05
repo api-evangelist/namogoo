@@ -1,17 +1,32 @@
 aid: namogoo
 name: Namogoo
-description: 'Namogoo is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Namogoo Technologies Ltd. is an Israeli (Herzliya) commerce-technology company
+  founded in 2014, originally known for Customer Journey Hijacking prevention and later for
+  its Digital Journey Continuity and Intent-Based Promotions products for online retailers.
+  The company pivoted to real-time predictive AI for the customer experience, rebranded its
+  product and site to Wandz.ai, and was acquired by French experimentation vendor AB Tasty in
+  November 2025, where the technology now powers AB Tasty AdaptiveCX. Namogoo publishes no
+  public REST API or OpenAPI definition; its integration surface is a JavaScript tag plus
+  first-party mobile SDKs distributed through Maven Central (ai.wandz.android:core-wandz),
+  CocoaPods (NamogooIBPSDK), Swift Package Manager (WandzSDK) and Packagist (Magento 2 modules),
+  activated with an Account ID / client ID issued through the Wandz.ai platform portal.'
 url: https://raw.githubusercontent.com/api-evangelist/namogoo/refs/heads/main/apis.yml
+image: https://avatars.githubusercontent.com/u/48321538?v=4
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-04'
 modified: '2026-08-04'
 tags:
 - Company
+- E-Commerce
+- Retail
+- Personalization
+- Customer Experience
+- Predictive AI
+- Marketing
+- Mobile SDK
+- Israel
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +34,67 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/namogoo-trust-center.yml
+- type: DomainSecurity
+  url: security/namogoo-domain-security.yml
 - type: Website
+  url: https://wandz.ai/
+- type: GitHubOrganization
+  url: https://github.com/namogoo
+- type: Login
+  url: https://app.wandz.ai/login
+- type: Support
+  url: https://wandz.ai/contact-us/
+- type: PrivacyPolicy
+  url: https://wandz.ai/privacy-policy/
+- type: TermsOfService
+  url: https://wandz.ai/terms-of-use/
+- type: Security
+  url: https://wandz.ai/security/
+- type: Compliance
+  url: https://wandz.ai/security/
+- type: Acquisition
+  url: https://www.abtasty.com/blog/wandzai-acquisition/
+- type: SecondaryMarket
   url: https://forgeglobal.com/namogoo_stock/
+- type: Packages
+  url: packages/namogoo-packages.yml
+- type: SDKs
+  url: packages/namogoo-packages.yml
+- type: WellKnown
+  url: well-known/namogoo-well-known.yml
+- type: Authentication
+  url: authentication/namogoo-authentication.yml
+- type: Conformance
+  url: conformance/namogoo-conformance.yml
+- type: Lifecycle
+  url: lifecycle/namogoo-lifecycle.yml
+- type: VulnerabilityDisclosure
+  url: security/namogoo-vulnerability-disclosure.yml
+- type: LLMsTxt
+  url: llms/namogoo-llms.txt
+x-enrichment:
+  date: '2026-08-04'
+  status: minimal
+  artifacts_added: 9
+  pass: local-v1
+x-coverage:
+  state: unreadable
+  reason: pdf-only-docs
+  detail: >-
+    Namogoo ships actively maintained first-party mobile SDKs (Maven Central
+    ai.wandz.android:core-wandz 1.0.49, CocoaPods NamogooIBPSDK, SPM WandzSDK), but the only
+    reference for them is a 3.7 MB PDF committed to a GitHub repository — there is no web API
+    reference, no OpenAPI on any resolvable Namogoo or Wandz host, and namogoo.com now 301s
+    through wandz.ai to AB Tasty AdaptiveCX after the November 2025 acquisition.
+  evidence:
+  - url: https://github.com/namogoo/wandz-android-sample/raw/main/ReadmeAssets/WandzAndroidSDK.pdf
+    status: 200
+  - url: https://wandz.ai/openapi.json
+    status: 404
+  - url: https://wandz.ai/.well-known/agent-card.json
+    status: 404
+  - url: https://www.namogoo.com/
+    status: 301
+  checked: '2026-08-04'

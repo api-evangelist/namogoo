@@ -1,0 +1,91 @@
+generated: '2026-08-04'
+method: probed
+source: live GET probes of the Namogoo / Wandz.ai hosts, 2026-08-04
+notes: >-
+  namogoo.com and www.namogoo.com 301 to wandz.ai, which in turn 301s its root to
+  https://www.abtasty.com/adaptivecx/ after the AB Tasty acquisition. Any 200 observed on a
+  namogoo.com /.well-known/ path is the AB Tasty marketing page served after that redirect
+  chain, NOT a discovery document — those are recorded as false positives, not hits. The
+  wandz.ai origin answers its own /.well-known/ paths with a real 404. app.wandz.ai is a
+  single-page app whose catch-all returns 200 text/html for every path, so its 200s are also
+  false positives.
+hosts:
+- host: https://namogoo.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    hit: false
+    reason: redirect-to-https://www.abtasty.com/adaptivecx/ (text/html)
+- host: https://www.namogoo.com
+  documents:
+  - path: /.well-known/agent-card.json
+    status: 200
+    hit: false
+    reason: redirect-to-https://www.abtasty.com/adaptivecx/ (text/html)
+- host: https://wandz.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    hit: false
+  - path: /.well-known/agent-card.json
+    status: 404
+    hit: false
+  - path: /.well-known/agent.json
+    status: 404
+    hit: false
+  - path: /llms.txt
+    status: 404
+    hit: false
+  - path: /openapi.json
+    status: 404
+    hit: false
+  - path: /robots.txt
+    status: 200
+    hit: true
+    file: null
+    note: Standard WordPress robots.txt; not a discovery document, not saved.
+- host: https://app.wandz.ai
+  documents:
+  - path: /openapi.json
+    status: 200
+    hit: false
+    reason: SPA catch-all returns text/html for every path
+  - path: /api-docs
+    status: 200
+    hit: false
+    reason: SPA catch-all returns text/html for every path
+  - path: /.well-known/agent-card.json
+    status: 200
+    hit: false
+    reason: SPA catch-all returns text/html for every path
+- host: https://api.namogoo.com
+  documents:
+  - path: /
+    status: 0
+    hit: false
+    reason: DNS does not resolve
+- host: https://docs.namogoo.com
+  documents:
+  - path: /
+    status: 0
+    hit: false
+    reason: DNS does not resolve
+- host: https://developer.namogoo.com
+  documents:
+  - path: /
+    status: 0
+    hit: false
+    reason: DNS does not resolve
+- host: https://api.wandz.ai
+  documents:
+  - path: /
+    status: 0
+    hit: false
+    reason: DNS does not resolve
+- host: https://docs.wandz.ai
+  documents:
+  - path: /
+    status: 0
+    hit: false
+    reason: DNS does not resolve
+documents_saved: []

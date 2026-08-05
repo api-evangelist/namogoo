@@ -1,0 +1,37 @@
+generated: '2026-08-04'
+method: searched
+source: https://github.com/namogoo/wandz-android-sdk
+docs: https://github.com/namogoo/wandz-android-sample/raw/main/ReadmeAssets/WandzAndroidSDK.pdf
+note: >-
+  DERIVED FROM SDK DOCUMENTATION, NOT FROM AN OPENAPI. Namogoo / Wandz.ai publishes no OpenAPI
+  or public REST reference, so there are no securitySchemes to aggregate. The only documented
+  authentication model is the tenant Account ID (client ID) that activates the SDK against the
+  Wandz.ai platform; the Account ID is issued by the vendor after a sales conversation and the
+  server-side credential model is not published.
+summary:
+  types: [account-id]
+  api_key_in: [application-manifest, sdk-initialization]
+  oauth2_flows: []
+  public_rest_api: false
+schemes:
+- name: wandz-account-id
+  type: apiKey
+  in: application-manifest
+  parameter: ai.wandz.sdk.client_id
+  description: >-
+    Android: a meta-data entry in AndroidManifest.xml carrying the Wandz.ai Account ID, read by
+    WandzClient.start(applicationContext) at SDK initialization.
+  issued_via: https://wandz.ai/contact-us/
+  portal: https://app.wandz.ai/login
+  sources: [https://github.com/namogoo/wandz-android-sdk]
+- name: namogoo-ibp-account-id
+  type: apiKey
+  in: sdk-initialization
+  description: >-
+    iOS Intent-Based Promotions SDK (NamogooIBPSDK, CocoaPods) is initialized with a
+    Namogoo-issued account identifier; the value is provisioned by Namogoo, not self-service.
+  sources: [https://github.com/namogoo/namogoo-ibp-ios-sdk]
+gaps:
+- No public REST/GraphQL endpoint, so no bearer/OAuth2/OIDC scheme is documented anywhere public.
+- No self-service key issuance — credentials are provisioned through a contact-sales flow.
+- The full SDK reference is a 3.7 MB PDF in a GitHub repository, not a web reference.
