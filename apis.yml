@@ -11,6 +11,17 @@ description: 'Namogoo Technologies Ltd. is an Israeli (Herzliya) commerce-techno
   CocoaPods (NamogooIBPSDK), Swift Package Manager (WandzSDK) and Packagist (Magento 2 modules),
   activated with an Account ID / client ID issued through the Wandz.ai platform portal.'
 url: https://raw.githubusercontent.com/api-evangelist/namogoo/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://avatars.githubusercontent.com/u/48321538?v=4
 x-type: company
 x-source: harvest:secondary-market
